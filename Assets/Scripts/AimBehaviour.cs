@@ -33,8 +33,7 @@ public class AimBehaviour : MonoBehaviour
             var lockedPlane = _lockedPlane;
             hit = lockedPlane == null
                 ? hits[0]
-               : hits.SingleOrDefault(x => x.trackableId ==
-     lockedPlane.trackableId);
+               : hits.SingleOrDefault(x => x.trackableId == lockedPlane.trackableId);
         }
 
         if (hit.HasValue)

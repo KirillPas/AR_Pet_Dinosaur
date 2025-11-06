@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class WatcherBehavior : MonoBehaviour
 {
+    [SerializeField] public Animator animator;
     public void SetUp(float speed, AimBehaviour aimBehaviour)
     {
         _speed = speed;
@@ -15,10 +16,12 @@ public class WatcherBehavior : MonoBehaviour
         var currentPosition = transform.position;
         if (Vector3.Distance(trackingPosition, currentPosition) < 0.1f)
         {
+            animator.SetBool("Speed", false);
             return;
         }
         var lookRotation = Quaternion.LookRotation(trackingPosition - currentPosition);
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 10f);
         transform.position = Vector3.MoveTowards(currentPosition, trackingPosition, _speed * Time.deltaTime);
+        animator.SetBool("Speed", true);
     }
 }
