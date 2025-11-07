@@ -1411,6 +1411,8 @@ GameObject:
   - component: {fileID: 9071204797060617595}
   - component: {fileID: 8050267063983522855}
   - component: {fileID: 8170651844859333130}
+  - component: {fileID: 5523145257114821720}
+  - component: {fileID: 27742234715300471}
   m_Layer: 9
   m_Name: Baryonyx
   m_TagString: Creature
@@ -1881,6 +1883,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WatcherBehavior
   animator: {fileID: 3605886240106284167}
+--- !u!114 &5523145257114821720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5858956016220779599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f32e779b14db511499a9a719c5b5e06d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Attack
+--- !u!65 &27742234715300471
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5858956016220779599}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 7.6122265, y: 12.06374, z: 32.867073}
+  m_Center: {x: 0.0657998, y: 5.5318704, z: -3.3937576}
 --- !u!1 &5915978858802245600
 GameObject:
   m_ObjectHideFlags: 0
