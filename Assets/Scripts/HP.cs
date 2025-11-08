@@ -3,7 +3,18 @@ using UnityEngine;
 public class HP : MonoBehaviour
 {
     [SerializeField] private int maxhp = 100;
+    public int Maxhp
+    {
+        get {return maxhp;}
+        set {maxhp = value;}
+    }
+
     private int currenthp;
+    public int Currenthp
+    {
+        get { return currenthp; }
+        set { currenthp = value; }
+    }
 
     [SerializeField] private AudioClip damage;
     [SerializeField] private AudioSource Damage;

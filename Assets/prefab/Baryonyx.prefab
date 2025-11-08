@@ -205,7 +205,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9811321, g: 0.14346743, b: 0.14346743, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -919,7 +919,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.23979, y: -0.00000022911}
+  m_AnchoredPosition: {x: -0.2636, y: -0.00000022911}
   m_SizeDelta: {x: 40.14041, y: 66.667}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8528406370388327067
@@ -1729,6 +1729,7 @@ GameObject:
   - component: {fileID: 8761241019938684774}
   - component: {fileID: 6182711880677037540}
   - component: {fileID: 8969764464346954791}
+  - component: {fileID: 5822092476876147857}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1744,9 +1745,9 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5714522988099718795}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: -2.14}
-  m_LocalScale: {x: 49.99999, y: 50, z: 49.99999}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0, y: 0, z: 0.68}
+  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4900659910531977384}
   - {fileID: 3314448866709745244}
@@ -1754,7 +1755,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 50.3, y: 67.65}
+  m_AnchoredPosition: {x: 50.3, y: 61.01}
   m_SizeDelta: {x: 0.6, y: 0.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &8761241019938684774
@@ -1802,7 +1803,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &8969764464346954791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1820,6 +1821,21 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &5822092476876147857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5714522988099718795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b03137e1bb639a43ae69ef186b35f37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Indicator
+  healthSlider: {fileID: 7722128551110488116}
+  Hp: {fileID: 6397680932221544802}
+  x: {fileID: 4475418405352134388}
 --- !u!1 &5858956016220779599
 GameObject:
   m_ObjectHideFlags: 0
@@ -1868,7 +1884,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.8, y: 0}
+  m_AnchoredPosition: {x: 2.8, y: -327.642}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!54 &6652903954558436204
@@ -2572,7 +2588,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6855171192545774959}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2604,7 +2620,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8773585, g: 0.086908154, b: 0.086908154, a: 1}
+  m_Color: {r: 0.015686275, g: 1, b: 0.08235294, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3452,7 +3468,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.015686275, g: 1, b: 0.08235294, a: 1}
+    m_NormalColor: {r: 1, g: 0.051886797, b: 0.051886797, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
