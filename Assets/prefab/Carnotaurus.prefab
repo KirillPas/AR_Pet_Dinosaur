@@ -1983,6 +1983,7 @@ GameObject:
   - component: {fileID: 5713183019383985263}
   - component: {fileID: 1009575161294364764}
   - component: {fileID: 1883386616940254049}
+  - component: {fileID: 1001909500446675493}
   m_Layer: 9
   m_Name: Carnotaurus
   m_TagString: Creature
@@ -2000,7 +2001,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 7.017213, y: -0.0000009536743, z: -3.073309}
-  m_LocalScale: {x: 0.002, y: 0.002, z: 0.002}
+  m_LocalScale: {x: 0.02, y: 0.02, z: 0.02}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6020848018557002132}
@@ -2440,6 +2441,20 @@ MonoBehaviour:
   Carn2: {fileID: 8300000, guid: 8b9e52ae507b2504bbc274194602b4f4, type: 3}
   Carn3: {fileID: 8300000, guid: 2d214f375171ac3498fdd7e01d01d443, type: 3}
   Carn4: {fileID: 8300000, guid: 605cf1196f116404cbe4dd5933d1ff87, type: 3}
+--- !u!114 &1001909500446675493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8396664866884345318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a945ff6c202623b49a50f59ec08ba28d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyMove
+  player: {fileID: 0}
+  speed: 3
 --- !u!1 &8532055149605745093
 GameObject:
   m_ObjectHideFlags: 0
