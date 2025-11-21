@@ -2,35 +2,36 @@ using UnityEngine;
 
 public class SpawnerEnemy : MonoBehaviour
 {
-    [SerializeField] private GameObject enemyPrefab;
-    [SerializeField] public Transform player;
-    [SerializeField] private float spawnDistance = 1f;
-    [SerializeField] private LayerMask groundLayer;
-    [SerializeField] private float groundOffset = 0f;
+    public GameObject enemyPrefab;  // Префаб врага для спавна
+    public Transform spawnCenter;   // Трансформ, вокруг которого спавним врагов (ваш префаб)
+    public float spawnRadius = 3f;  // Радиус спавна вокруг префаба
+    public float spawnInterval = 2f; // Интервал между спавнами
+    public int maxEnemies = 3;      // Максимум врагов
 
-    private bool hasSpawned = false;
-    public void SpawnEnemyNearPlayer()
+    private float timer;
+    private int currentEnemyCount;
+
+    void Update()
     {
-        if (hasSpawned)
-            return;
-
-        if (player == null || enemyPrefab == null)
+        timer -= Time.deltaTime;
+        if (timer <= 0f && currentEnemyCount < maxEnemies)
         {
-            Debug.LogWarning("Player or enemyPrefab not assigned!");
-            return;
+            SpawnEnemy();
+            timer = spawnInterval;
         }
+    }
 
-        Vector3 spawnPosition = player.position + player.forward * spawnDistance;
+    void SpawnEnemy()
+    {
+        Vector2 circlePos = Random.insideUnitCircle * spawnRadius;
+        // Устанавливаем позицию врага вокруг префаба по X и Z с одинаковой высотой Y
+        Vector3 spawnPos = new Vector3(spawnCenter.position.x + circlePos.x, spawnCenter.position.y, spawnCenter.position.z + circlePos.y);
+        Instantiate(enemyPrefab, spawnPos, Quaternion.identity);
+        currentEnemyCount++;
+    }
 
-        if (Physics.Raycast(spawnPosition + Vector3.up, Vector3.down, out RaycastHit hit, 10f, groundLayer))
-        {
-            spawnPosition.y = hit.point.y + groundOffset;
-        }
-        else
-        {
-            spawnPosition.y = player.position.y;
-        }
-        Instantiate(enemyPrefab, spawnPosition, Quaternion.LookRotation(player.forward));
-        hasSpawned = true;
+    public void EnemyDied()
+    {
+        currentEnemyCount--;
     }
 }

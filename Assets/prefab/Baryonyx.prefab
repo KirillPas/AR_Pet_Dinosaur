@@ -1856,6 +1856,7 @@ GameObject:
   - component: {fileID: 27742234715300471}
   - component: {fileID: 4475418405352134388}
   - component: {fileID: 1192006810960645306}
+  - component: {fileID: -4251043214344429936}
   m_Layer: 9
   m_Name: Baryonyx
   m_TagString: Player
@@ -2432,6 +2433,23 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &-4251043214344429936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5858956016220779599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: deab61e291ea89542ae90c3546ce5c91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpawnerEnemy
+  enemyPrefab: {fileID: 8396664866884345318, guid: 2eab5a9fce204084d9ce2fbb8b4b5492, type: 3}
+  spawnCenter: {fileID: 4617121567787157399}
+  spawnRadius: 3
+  spawnInterval: 2
+  maxEnemies: 3
 --- !u!1 &5915978858802245600
 GameObject:
   m_ObjectHideFlags: 0
