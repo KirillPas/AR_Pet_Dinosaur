@@ -1,31 +1,36 @@
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class SpawnerEnemy : MonoBehaviour
 {
-    [SerializeField] private GameObject enemyPrefab;   // Префаб врага для спавна
-    [SerializeField] public Transform player;         // Трансформ игрока
-    [SerializeField] private float spawnDistance = 1f; // Расстояние от игрока для спавна врага
-    private bool hasSpawned = false;                    // Флаг спавна, чтобы враг создавался один раз
-    void SpawnEnemyNearPlayer()
-    {
-        Vector3 spawnPosition = player.position + Random.insideUnitSphere * spawnDistance;
-        spawnPosition.y = player.position.y;
+    [SerializeField] private GameObject enemyPrefab;
+    [SerializeField] public Transform player;
+    [SerializeField] private float spawnDistance = 1f;
+    [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private float groundOffset = 0f;
 
-        GameObject enemy = Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
-        EnemyMove enemyMove = enemy.GetComponent<EnemyMove>();
-        if (enemyMove != null)
+    private bool hasSpawned = false;
+    public void SpawnEnemyNearPlayer()
+    {
+        if (hasSpawned)
+            return;
+
+        if (player == null || enemyPrefab == null)
         {
-            enemyMove.SetPlayer(player);
+            Debug.LogWarning("Player or enemyPrefab not assigned!");
+            return;
         }
 
+        Vector3 spawnPosition = player.position + player.forward * spawnDistance;
+
+        if (Physics.Raycast(spawnPosition + Vector3.up, Vector3.down, out RaycastHit hit, 10f, groundLayer))
+        {
+            spawnPosition.y = hit.point.y + groundOffset;
+        }
+        else
+        {
+            spawnPosition.y = player.position.y;
+        }
+        Instantiate(enemyPrefab, spawnPosition, Quaternion.LookRotation(player.forward));
         hasSpawned = true;
-    }
-    void Update()
-    {
-        if (!hasSpawned)
-        {
-            SpawnEnemyNearPlayer();
-        }
     }
 }
