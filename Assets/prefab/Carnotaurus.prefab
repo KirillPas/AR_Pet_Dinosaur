@@ -2772,6 +2772,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Attack
   damageAmount: 20
+  attackRange: 0.4
 --- !u!1 &8532055149605745093
 GameObject:
   m_ObjectHideFlags: 0
