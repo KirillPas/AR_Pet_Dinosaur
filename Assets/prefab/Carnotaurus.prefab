@@ -2260,6 +2260,7 @@ GameObject:
   - component: {fileID: 4417778887435299448}
   - component: {fileID: 2871590619569053456}
   - component: {fileID: 4414604905499733424}
+  - component: {fileID: -6707303554165260459}
   m_Layer: 7
   m_Name: Carnotaurus
   m_TagString: Enemy
@@ -2731,10 +2732,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HP
   _animator: {fileID: 1195281827116082405}
-  _animatorAttack: {fileID: 3605886240106284167, guid: 700e020e97d86cc4b8bb053882c42722, type: 3}
   maxhp: 100
-  _Damage: {fileID: 0}
-  Damage: {fileID: 0}
   _die: {fileID: 0}
   Die: {fileID: 0}
   damageCooldown: 2
@@ -2773,6 +2771,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Attack
   damageAmount: 20
   attackRange: 0.4
+--- !u!114 &-6707303554165260459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8396664866884345318}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6a4fd9f0561c4b41901e6118fa1f44c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyAttack
+  damageAmount: 15
+  attackDelay: 0.3
+  attackCooldown: 1
+  enemyAnimator: {fileID: 1195281827116082405}
 --- !u!1 &8532055149605745093
 GameObject:
   m_ObjectHideFlags: 0

@@ -3,10 +3,10 @@ using System.Collections;
 public class HP : MonoBehaviour
 {
     [SerializeField] private Animator _animator;
-    [SerializeField] private Animator _animatorAttack;
     [SerializeField] private int maxhp = 100;
     private int currenthp;
     private SpawnerEnemy coll;
+    private EnemyAttack _enemyattack;
 
     public int Maxhp
     {
@@ -18,9 +18,6 @@ public class HP : MonoBehaviour
         get { return currenthp; }
         set { currenthp = value; }
     }
-
-    [SerializeField] private AudioClip _Damage;
-    [SerializeField] private AudioSource Damage;
     [SerializeField] private AudioClip _die;
     [SerializeField] private AudioSource Die;
 
@@ -35,16 +32,9 @@ public class HP : MonoBehaviour
         if (canTakeDamage)
         {
             currenthp -= damage;
-            if (_animatorAttack != null)
-            {
-                _animatorAttack.SetBool("Attack", true);
-                _animatorAttack.SetBool("Attack", false);
-            }    
             if (currenthp <= 0)
                 Death();
             StartCoroutine(DamageCooldownRoutine());
-            if (Damage != null)
-                Damage.PlayOneShot(_Damage);
         }
     }
     public void Death()
