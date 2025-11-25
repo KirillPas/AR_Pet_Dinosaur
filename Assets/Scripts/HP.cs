@@ -5,7 +5,7 @@ public class HP : MonoBehaviour
     [SerializeField] private Animator _animator;
     [SerializeField] private int maxhp = 100;
     private int currenthp;
-    private SpawnerEnemy coll;
+    public bool f = false;
     private EnemyAttack _enemyattack;
 
     public int Maxhp
@@ -31,9 +31,11 @@ public class HP : MonoBehaviour
     {
         if (canTakeDamage)
         {
-            currenthp -= damage;
-            if (currenthp <= 0)
+            Currenthp -= damage;
+            if (Currenthp <= 0)
+            {
                 Death();
+            }
             StartCoroutine(DamageCooldownRoutine());
         }
     }
@@ -63,6 +65,6 @@ public class HP : MonoBehaviour
         yield return new WaitForSeconds(Mathf.Max(animationLength, 5f));
 
         Destroy(gameObject);
-        coll.EnemyDied();
+        f = true;
     }
 }

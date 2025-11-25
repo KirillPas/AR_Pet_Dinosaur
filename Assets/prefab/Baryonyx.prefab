@@ -2365,10 +2365,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HP
   _animator: {fileID: 3605886240106284167}
-  _animatorAttack: {fileID: 1195281827116082405, guid: 2eab5a9fce204084d9ce2fbb8b4b5492, type: 3}
   maxhp: 100
-  _Damage: {fileID: 0}
-  Damage: {fileID: 0}
+  Currenthp1: 100
+  f: 0
   _die: {fileID: 0}
   Die: {fileID: 0}
   damageCooldown: 2
@@ -2437,9 +2436,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SpawnerEnemy
   enemyPrefab: {fileID: 8396664866884345318, guid: 2eab5a9fce204084d9ce2fbb8b4b5492, type: 3}
   spawnCenter: {fileID: 4617121567787157399}
-  spawnRadius: 2
+  spawnRadius: 1.5
   spawnInterval: 2
   maxEnemies: 3
+  hp: {fileID: 4417778887435299448, guid: 2eab5a9fce204084d9ce2fbb8b4b5492, type: 3}
+  currentEnemyCount: 0
 --- !u!1 &5915978858802245600
 GameObject:
   m_ObjectHideFlags: 0

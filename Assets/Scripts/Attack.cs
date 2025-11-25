@@ -3,9 +3,10 @@ using UnityEngine.EventSystems;
 
 public class Attack : MonoBehaviour, IPointerDownHandler
 {
-    public int damageAmount = 20;
+    public int damagePlayer = 20;
+    public int damageEnemy = 15;
     public float attackRange = 0.5f;
-    private HP hp;
+    public HP hp;
     private Transform playerTransform;
 
     void Start()
@@ -38,7 +39,7 @@ public class Attack : MonoBehaviour, IPointerDownHandler
     }
     private void AttackEnemy()
     {
-        hp.TakeDamage(damageAmount);
-        Debug.Log("”рон нанесЄн: " + damageAmount);
+        hp.TakeDamage(damagePlayer);
+        Debug.Log("”рон нанесЄн: " + damagePlayer);
     }
 }
