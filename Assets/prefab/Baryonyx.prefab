@@ -1835,7 +1835,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Indicator
   healthSlider: {fileID: 7722128551110488116}
   Hp: {fileID: 6397680932221544802}
-  x: {fileID: 4475418405352134388}
+  x: {fileID: 0}
 --- !u!1 &5858956016220779599
 GameObject:
   m_ObjectHideFlags: 0
@@ -1853,9 +1853,9 @@ GameObject:
   - component: {fileID: 8050267063983522855}
   - component: {fileID: 8170651844859333130}
   - component: {fileID: 27742234715300471}
-  - component: {fileID: 4475418405352134388}
   - component: {fileID: 1192006810960645306}
   - component: {fileID: -4251043214344429936}
+  - component: {fileID: -3703320819117073441}
   m_Layer: 8
   m_Name: Baryonyx
   m_TagString: Player
@@ -2352,25 +2352,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 7.6122265, y: 12.06374, z: 32.867073}
   m_Center: {x: 0.0657998, y: 5.5318704, z: -3.3937576}
---- !u!114 &4475418405352134388
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5858956016220779599}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c4eb91a82357c04ca1c7da14331a0cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::HP
-  _animator: {fileID: 3605886240106284167}
-  maxhp: 100
-  Currenthp1: 100
-  f: 0
-  _die: {fileID: 0}
-  Die: {fileID: 0}
-  damageCooldown: 2
 --- !u!114 &1192006810960645306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2441,6 +2422,24 @@ MonoBehaviour:
   maxEnemies: 3
   hp: {fileID: 4417778887435299448, guid: 2eab5a9fce204084d9ce2fbb8b4b5492, type: 3}
   currentEnemyCount: 0
+--- !u!114 &-3703320819117073441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5858956016220779599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c4eb91a82357c04ca1c7da14331a0cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HP
+  _animator: {fileID: 3605886240106284167}
+  maxhp: 100
+  f: 0
+  _die: {fileID: 0}
+  Die: {fileID: 0}
+  damageCooldown: 3
 --- !u!1 &5915978858802245600
 GameObject:
   m_ObjectHideFlags: 0

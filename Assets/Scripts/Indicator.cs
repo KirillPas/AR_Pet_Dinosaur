@@ -6,12 +6,12 @@ public class Indicator : MonoBehaviour
 {
     public Slider healthSlider;
     public TextMeshProUGUI Hp;
-    public HP x;
+    public HpEnemy x;
     void Update()
     {
         if (Hp != null)
-            Hp.text = ((float)x.Currenthp).ToString();
+            Hp.text = ((float)x.currentHealth).ToString();
         if (x != null)
-            healthSlider.value = ((float)x.Currenthp / x.Maxhp);
+            healthSlider.value = ((float)x.currentHealth / x.maxHealth);
     }
 }

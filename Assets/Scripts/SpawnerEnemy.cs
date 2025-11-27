@@ -8,7 +8,7 @@ public class SpawnerEnemy : MonoBehaviour
     public float spawnInterval = 2f; // Интервал между спавнами
     public int maxEnemies = 3;      // Максимум врагов
 
-    [SerializeField] private HP hp;
+    [SerializeField] private HpEnemy hp;
     private float timer;
     public int currentEnemyCount;
 
@@ -19,8 +19,8 @@ public class SpawnerEnemy : MonoBehaviour
         {
             SpawnEnemy();
             timer = spawnInterval;
-            if (hp.f == true)
-                EnemyDied();
+            //if (hp.f == true)
+            //    EnemyDied();
         }
     }
 

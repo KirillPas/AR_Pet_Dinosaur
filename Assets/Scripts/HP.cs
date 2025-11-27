@@ -31,6 +31,7 @@ public class HP : MonoBehaviour
     {
         if (canTakeDamage)
         {
+            f = true;
             Currenthp -= damage;
             if (Currenthp <= 0)
             {
@@ -65,6 +66,6 @@ public class HP : MonoBehaviour
         yield return new WaitForSeconds(Mathf.Max(animationLength, 5f));
 
         Destroy(gameObject);
-        f = true;
+        
     }
 }

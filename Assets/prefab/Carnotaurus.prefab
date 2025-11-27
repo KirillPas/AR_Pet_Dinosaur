@@ -448,7 +448,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Indicator
   healthSlider: {fileID: 0}
   Hp: {fileID: 7946412009056122283}
-  x: {fileID: 4417778887435299448}
+  x: {fileID: -2147631956796914632}
 --- !u!1 &1280084945861562903
 GameObject:
   m_ObjectHideFlags: 0
@@ -2251,15 +2251,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2270207920589947400}
-  - component: {fileID: 2476561183997632774}
   - component: {fileID: 1195281827116082405}
   - component: {fileID: 8154074885204714453}
   - component: {fileID: 5713183019383985263}
   - component: {fileID: 1009575161294364764}
   - component: {fileID: 1883386616940254049}
-  - component: {fileID: 4417778887435299448}
   - component: {fileID: 2871590619569053456}
-  - component: {fileID: 4414604905499733424}
+  - component: {fileID: -2147631956796914632}
+  - component: {fileID: -3831878128008375230}
   m_Layer: 7
   m_Name: Carnotaurus
   m_TagString: Enemy
@@ -2287,33 +2286,6 @@ Transform:
   - {fileID: 7619497939461731029}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &2476561183997632774
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8396664866884345318}
-  serializedVersion: 5
-  m_Mass: 1
-  m_LinearDamping: 4
-  m_AngularDamping: 4
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!95 &1195281827116082405
 Animator:
   serializedVersion: 7
@@ -2597,7 +2569,7 @@ MonoBehaviour:
   crouch_Max: 4
   yaw_Max: 25
   pitch_Max: 12
-  body: {fileID: 2476561183997632774}
+  body: {fileID: 0}
   lod: {fileID: 8154074885204714453}
   anm: {fileID: 1195281827116082405}
   source:
@@ -2718,23 +2690,6 @@ MonoBehaviour:
   Carn2: {fileID: 8300000, guid: 8b9e52ae507b2504bbc274194602b4f4, type: 3}
   Carn3: {fileID: 8300000, guid: 2d214f375171ac3498fdd7e01d01d443, type: 3}
   Carn4: {fileID: 8300000, guid: 605cf1196f116404cbe4dd5933d1ff87, type: 3}
---- !u!114 &4417778887435299448
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8396664866884345318}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c4eb91a82357c04ca1c7da14331a0cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::HP
-  _animator: {fileID: 1195281827116082405}
-  maxhp: 100
-  _die: {fileID: 0}
-  Die: {fileID: 0}
-  damageCooldown: 2
 --- !u!65 &2871590619569053456
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2750,13 +2705,13 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 10, y: 16, z: 35}
+  m_Size: {x: 9, y: 16, z: 35}
   m_Center: {x: 0, y: 8, z: -3.5}
---- !u!114 &4414604905499733424
+--- !u!114 &-2147631956796914632
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2765,14 +2720,41 @@ MonoBehaviour:
   m_GameObject: {fileID: 8396664866884345318}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f32e779b14db511499a9a719c5b5e06d, type: 3}
+  m_Script: {fileID: 11500000, guid: 6589afb3386b01342943a5f81301cb2e, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Attack
-  damagePlayer: 20
-  damageEnemy: 15
-  attackRange: 0.4
-  hp: {fileID: 4417778887435299448}
-  hp_player: {fileID: 4475418405352134388, guid: 700e020e97d86cc4b8bb053882c42722, type: 3}
+  m_EditorClassIdentifier: Assembly-CSharp::HpEnemy
+  maxHealth: 100
+  currentHealth: 0
+  deathEffect: {fileID: 0}
+  deathSound: {fileID: 0}
+  animator: {fileID: 1195281827116082405}
+--- !u!54 &-3831878128008375230
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8396664866884345318}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &8532055149605745093
 GameObject:
   m_ObjectHideFlags: 0

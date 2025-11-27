@@ -738,7 +738,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WatcherSpawner
   aimBehaviour: {fileID: 123665523}
-  watcherPrefab: {fileID: 5858956016220779599, guid: 700e020e97d86cc4b8bb053882c42722, type: 3}
+  watcherPrefab: {fileID: 2885677972463529672, guid: 2be89e14c69aae7439b810044bfb64c5, type: 3}
   speed: 0.8
 --- !u!4 &1213074781
 Transform:
@@ -1378,7 +1378,7 @@ Camera:
   m_GameObject: {fileID: 1776556955}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
+  m_ClearFlags: 4
   m_BackGroundColor: {r: 0, g: 0, b: 0, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
