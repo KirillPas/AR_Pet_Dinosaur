@@ -2259,6 +2259,7 @@ GameObject:
   - component: {fileID: 2871590619569053456}
   - component: {fileID: -2147631956796914632}
   - component: {fileID: -3831878128008375230}
+  - component: {fileID: -4257463652929834493}
   m_Layer: 7
   m_Name: Carnotaurus
   m_TagString: Enemy
@@ -2755,6 +2756,23 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-4257463652929834493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8396664866884345318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6a4fd9f0561c4b41901e6118fa1f44c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyAttack
+  damageToPlayer: 15
+  attackDelay: 0.3
+  attackCooldown: 1
+  enemyAnimator: {fileID: 1195281827116082405}
+  playerHP: {fileID: -5241145449815584396, guid: 2be89e14c69aae7439b810044bfb64c5, type: 3}
 --- !u!1 &8532055149605745093
 GameObject:
   m_ObjectHideFlags: 0

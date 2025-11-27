@@ -2047,6 +2047,7 @@ GameObject:
   - component: {fileID: -3095970527020849597}
   - component: {fileID: 2049312685461011983}
   - component: {fileID: -4341809074480725760}
+  - component: {fileID: -5241145449815584396}
   m_Layer: 8
   m_Name: Player1
   m_TagString: Player
@@ -2590,6 +2591,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 7.6122265, y: 12.06374, z: 32.867073}
   m_Center: {x: 0.0657998, y: 5.5318704, z: -3.3937576}
+--- !u!114 &-5241145449815584396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2885677972463529672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90699e61a8f286b49adeea889a2e06d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HpPlayer
+  animator: {fileID: 2492552390524756707}
+  maxhp: 100
 --- !u!1 &2885677972463529848
 GameObject:
   m_ObjectHideFlags: 0

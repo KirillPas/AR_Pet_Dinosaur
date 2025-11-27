@@ -1,7 +1,9 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HpPlayer : MonoBehaviour
 {
+    [SerializeField] PlayerAnimator animator;
     [SerializeField] private int maxhp = 100;
     private int currentHp;
     public int Maxhp
@@ -14,5 +16,17 @@ public class HpPlayer : MonoBehaviour
         get { return currentHp; }
         set { currentHp = value; }
     }
-
+    public void TakeDamage(int damage)
+    {
+        currentHp -= damage;
+        if (currentHp <= 0)
+        {
+            Death();
+        }
+    }
+    public void Death() 
+    {
+        animator.DeathAnimation();
+        SceneManager.LoadScene("Menu");
+    }
 }

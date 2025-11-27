@@ -15,4 +15,11 @@ public class PlayerAnimator : MonoBehaviour
             animator.SetTrigger("Attack");
         }
     }
+    public void DeathAnimation()
+    {
+        if (animator != null)
+        {
+            animator.SetBool("Death", true);
+        }   
+    }
 }

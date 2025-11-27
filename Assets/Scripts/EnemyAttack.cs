@@ -3,46 +3,51 @@ using System.Collections;
 
 public class EnemyAttack : MonoBehaviour
 {
+    [Header("Настройки ответа врага")]
+    public int damageToPlayer = 15;
+    public float attackDelay = 0.3f;
+    public float attackCooldown = 1f;
+
     public Animator enemyAnimator;
-    private HP playerHP;
-    private Transform playerTransform;
+    public HpPlayer playerHP;
+
+    private bool canCounterAttack = true;
 
     void Start()
     {
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        if (player != null)
+        if (playerHP == null)
         {
-            playerHP = player.GetComponent<HP>();
-            playerTransform = player.transform;
-        }
-        else
-        {
-            Debug.LogError("Игрок не найден!");
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            if (player != null)
+                playerHP = player.GetComponent<HpPlayer>();
         }
     }
-
-    // Короутина для ответной атаки, принимает урон, который должен нанести враг
-    public IEnumerator EnemyAttackRoutine(int damage)
+    public void OnPlayerHitEnemy()
     {
+        if (!canCounterAttack)
+            return;
+
+        StartCoroutine(CounterAttackRoutine());
+    }
+    private IEnumerator CounterAttackRoutine()
+    {
+        canCounterAttack = false;
+
+        // Подготовка/анимация
         if (enemyAnimator != null)
-            enemyAnimator.SetBool("Attack", true);
+            enemyAnimator.SetTrigger("Attack");
 
-        // Задержка на анимацию и подготовку удара
-        yield return new WaitForSeconds(0.3f);
+        // Ждём, пока “дойдёт” анимация до момента удара
+        yield return new WaitForSeconds(attackDelay);
 
+        // Наносим урон игроку
         if (playerHP != null && playerHP.Currenthp > 0)
         {
-            float distance = Vector3.Distance(transform.position, playerTransform.position);
-            if (distance <= 1.5f)  // можно настроить радиус атаки врага
-            {
-                playerHP.TakeDamage(damage);
-                Debug.Log("Враг нанес урон игроку: " + damage);
-            }
+            playerHP.TakeDamage(damageToPlayer);
+            Debug.Log($"[Enemy] Ответный удар по игроку: {damageToPlayer}");
         }
-
-        // Дополнительная задержка для кулдауна врага (если нужно)
-        yield return new WaitForSeconds(1f);
-        if (enemyAnimator != null)
-            enemyAnimator.SetBool("Attack", false);
+        // КД перед следующим ответом
+        yield return new WaitForSeconds(attackCooldown);
+        canCounterAttack = true;
     }
 }

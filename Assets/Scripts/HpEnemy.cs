@@ -40,7 +40,7 @@ public class HpEnemy : MonoBehaviour
         }
         animator.SetBool("Death", true);
         // Уничтожаем объект
-        Destroy(gameObject);
+        Destroy(gameObject, 7f);
 
         Debug.Log("Противник уничтожен!");
     }
