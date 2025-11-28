@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class ChangeLevel : MonoBehaviour
 {
     public Button level1;
+    public Canvas CanvasLevel;
 
     void Start()
     {
@@ -12,6 +13,8 @@ public class ChangeLevel : MonoBehaviour
     }
     void ChangeScene()
     {
-        SceneManager.LoadScene("Level1");
+        CanvasLevel.gameObject.SetActive(false);
+        if (CanvasLevel!= null)
+            SceneManager.LoadScene("Choice");
     }
 }

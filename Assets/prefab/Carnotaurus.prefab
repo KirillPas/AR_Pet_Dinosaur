@@ -2724,8 +2724,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HpEnemy
   maxHealth: 100
-  currentHealth: 0
-  count: {fileID: 1943300205089223821, guid: 2be89e14c69aae7439b810044bfb64c5, type: 3}
+  currentHealth: 100
   deathEffect: {fileID: 0}
   deathSound: {fileID: 0}
   animator: {fileID: 1195281827116082405}
@@ -2769,10 +2768,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAttack
   damageToPlayer: 15
-  attackDelay: 0.3
-  attackCooldown: 1
-  enemyAnimator: {fileID: 1195281827116082405}
+  counterDelay: 0.3
   playerHP: {fileID: -5241145449815584396, guid: 2be89e14c69aae7439b810044bfb64c5, type: 3}
+  enemyHp: {fileID: -2147631956796914632}
+  enemyAnimator: {fileID: 1195281827116082405}
 --- !u!1 &8532055149605745093
 GameObject:
   m_ObjectHideFlags: 0

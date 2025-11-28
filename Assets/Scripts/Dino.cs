@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Dino : MonoBehaviour
@@ -9,13 +10,12 @@ public class Dino : MonoBehaviour
     void Start()
     {
         canvas.gameObject.SetActive(true);
-        Time.timeScale = 0f;
         if (dino != null)
             dino.onClick.AddListener(StartGame);
     }
     void StartGame()
     {
         canvas.gameObject.SetActive(false);
-        Time.timeScale = 1.0f;
+        SceneManager.LoadScene("Level1");
     }
 }

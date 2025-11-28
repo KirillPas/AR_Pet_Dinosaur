@@ -195,7 +195,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WatcherSpawner
   aimBehaviour: {fileID: 1562130098}
-  watcherPrefab: {fileID: 5858956016220779599, guid: 700e020e97d86cc4b8bb053882c42722, type: 3}
+  watcherPrefab: {fileID: 2885677972463529672, guid: 2be89e14c69aae7439b810044bfb64c5, type: 3}
   speed: 0.8
 --- !u!4 &362940060
 Transform:
@@ -204,57 +204,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 362940058}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 0, z: 17}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &509526835
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 509526837}
-  - component: {fileID: 509526836}
-  m_Layer: 0
-  m_Name: Enemy
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &509526836
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 509526835}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: deab61e291ea89542ae90c3546ce5c91, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SpawnerEnemy
-  enemyPrefab: {fileID: 8396664866884345318, guid: 2eab5a9fce204084d9ce2fbb8b4b5492, type: 3}
-  player: {fileID: 1562130099}
-  spawnDistance: 0.5
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 1
-  groundOffset: 0
---- !u!4 &509526837
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 509526835}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1, y: 0, z: 17}
@@ -906,4 +855,3 @@ SceneRoots:
   - {fileID: 1895167290}
   - {fileID: 1562130099}
   - {fileID: 362940060}
-  - {fileID: 509526837}

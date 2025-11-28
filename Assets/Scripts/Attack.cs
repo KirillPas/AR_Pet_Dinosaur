@@ -16,31 +16,22 @@ public class Attack : MonoBehaviour
     void Start()
     {
         arCamera = Camera.main;
-        Debug.Log($"[Attack] Start. arCamera = {arCamera}", this);
-
-        if (arCamera == null)
-            Debug.LogError("[Attack] Camera.main НЕ найдена!", this);
     }
 
     void Update()
     {
-        // Показываем, что Update вообще работает
-        // (сильно спамит, можно потом убрать)
-        // Debug.Log("[Attack] Update", this);
-
         if (!canAttack)
+            return;
+        if (EnemyAttack.isbool)
             return;
 
 #if UNITY_EDITOR
-        // Для теста в редакторе мышью
         if (Input.GetMouseButtonDown(0))
         {
             Debug.Log("[Attack] Mouse click detected", this);
             TryAttack(Input.mousePosition);
         }
 #endif
-
-        // На телефоне — тач
         if (Input.touchCount > 0)
         {
             Touch t = Input.GetTouch(0);
@@ -56,28 +47,14 @@ public class Attack : MonoBehaviour
 
     void TryAttack(Vector2 screenPos)
     {
-        if (arCamera == null)
-        {
-            Debug.LogError("[Attack] TryAttack: arCamera == null", this);
-            return;
-        }
-
-        Debug.Log($"[Attack] TryAttack at screenPos = {screenPos}", this);
-
         Ray ray = arCamera.ScreenPointToRay(screenPos);
-        Debug.DrawRay(ray.origin, ray.direction * 100f, Color.red, 1f);
-        Debug.Log($"[Attack] Ray origin = {ray.origin}, dir = {ray.direction}", this);
 
         if (!Physics.Raycast(ray, out RaycastHit hit, 100f, enemyLayer))
         {
             Debug.Log("[Attack] Raycast: промах по enemyLayer", this);
             return;
         }
-
-        Debug.Log($"[Attack] Raycast HIT: {hit.collider.name}, layer = {hit.collider.gameObject.layer}", this);
-
         float distance = Vector3.Distance(transform.position, hit.transform.position);
-        Debug.Log($"[Attack] Distance to target = {distance}", this);
 
         if (distance > attackRange)
         {
@@ -90,41 +67,37 @@ public class Attack : MonoBehaviour
 
     void AttackEnemy(GameObject enemy)
     {
-        Debug.Log($"[Attack] AttackEnemy → {enemy.name}", this);
+        Debug.Log("[PlayerAttack] Попал по врагу: " + enemy.name);
 
         if (playerAnimator != null)
         {
-            Debug.Log("[Attack] PlayAttackAnimation()", this);
             playerAnimator.PlayAttackAnimation();
         }
-        else
-        {
-            Debug.LogWarning("[Attack] playerAnimator == null", this);
-        }
-
         HpEnemy enemyHealth = enemy.GetComponent<HpEnemy>();
-        if (enemyHealth != null)
+        if (enemyHealth != null && enemyHealth.currentHealth > 0)
         {
             enemyHealth.TakeDamage(attackDamage);
-            Debug.Log($"[Attack] Враг атакован! Урон: {attackDamage}", this);
-        }
-        else
-        {
-            Debug.LogWarning("[Attack] У цели нет компонента HpEnemy", this);
-        }
 
+            EnemyAttack enemyattack = enemy.GetComponent<EnemyAttack>();
+            if (enemyattack != null)
+            {
+                Debug.Log("[PlayerAttack] Вызываю OnPlayerHitEnemy у " + enemy.name);
+                enemyattack.OnPlayerHitEnemy();
+            }
+            else
+            {
+                Debug.LogWarning("[PlayerAttack] У врага нет EnemyAttack");
+            }
+        }
         StartCoroutine(AttackCooldown());
     }
 
     IEnumerator AttackCooldown()
     {
-        Debug.Log("[Attack] КД начался", this);
         canAttack = false;
         yield return new WaitForSeconds(attackCooldown);
         canAttack = true;
-        Debug.Log("[Attack] КД закончился, можно снова атаковать", this);
     }
-
     void OnDrawGizmos()
     {
         Gizmos.color = Color.green;

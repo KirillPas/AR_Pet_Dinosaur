@@ -2589,6 +2589,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChangeLevel
   level1: {fileID: 1407336917}
+  CanvasLevel: {fileID: 1558065739}
 --- !u!1 &1801812072
 GameObject:
   m_ObjectHideFlags: 0

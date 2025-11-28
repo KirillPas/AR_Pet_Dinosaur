@@ -4,33 +4,34 @@ using UnityEngine.SceneManagement;
 public class HpPlayer : MonoBehaviour
 {
     [SerializeField] PlayerAnimator animator;
-    [SerializeField] private int maxhp = 100;
-    private int currentHp;
-    public int Maxhp
-    {
-        get { return maxhp; }
-        set { maxhp = value; }
-    }
-    public int Currenthp
-    {
-        get { return currentHp; }
-        set { currentHp = value; }
-    }
-    private void Start()
+    public int maxhp = 100;
+    public int currentHp = 100;
+    void Start()
     {
         currentHp = maxhp;
     }
     public void TakeDamage(int damage)
     {
-        currentHp -= damage;
-        if (currentHp <= 0)
+        Debug.Log("[HpPlayer] TakeDamage. До урона: " + currentHp + ", урон: " + damage);
+        if(currentHp > 0)
+            currentHp -= damage;
+        if (currentHp < 0) currentHp = 0;
+
+        if (currentHp == 0)
         {
+            Debug.Log("[HpPlayer] HP == 0, Death()");
             Death();
         }
+        else
+        {
+            Debug.Log("[HpPlayer] После урона: " + currentHp);
+        }
     }
-    public void Death() 
+
+    public void Death()
     {
-        animator.DeathAnimation();
-        SceneManager.LoadScene("Menu");
+        DeathCanvas.previousSceneName = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene("Restart");
+        currentHp = maxhp;
     }
 }

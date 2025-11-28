@@ -1,17 +1,17 @@
- using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class EnemyAttack : MonoBehaviour
 {
-    [Header("Настройки ответа врага")]
+    [Header("Ответная атака врага")]
     public int damageToPlayer = 15;
-    public float attackDelay = 0.3f;
-    public float attackCooldown = 1f;
+    public float counterDelay = 0.15f;
 
-    public Animator enemyAnimator;
     public HpPlayer playerHP;
+    public HpEnemy enemyHp;
+    public Animator enemyAnimator;
 
-    private bool canCounterAttack = true;
+    public static bool isbool = false;
 
     void Start()
     {
@@ -21,33 +21,40 @@ public class EnemyAttack : MonoBehaviour
             if (player != null)
                 playerHP = player.GetComponent<HpPlayer>();
         }
+
+        if (enemyHp == null)
+            enemyHp = GetComponent<HpEnemy>();
     }
     public void OnPlayerHitEnemy()
     {
-        if (!canCounterAttack)
+        if (enemyHp == null || enemyHp.currentHealth <= 0)
+            return;
+
+        if (isbool)
             return;
 
         StartCoroutine(CounterAttackRoutine());
     }
     private IEnumerator CounterAttackRoutine()
     {
-        canCounterAttack = false;
+        isbool = true;
 
-        // Подготовка/анимация
+        yield return new WaitForSeconds(counterDelay);
+
+        if (enemyHp == null || enemyHp.currentHealth <= 0)
+        {
+            isbool = false;
+            yield break;
+        }
+
         if (enemyAnimator != null)
             enemyAnimator.SetTrigger("Attack");
 
-        // Ждём, пока “дойдёт” анимация до момента удара
-        yield return new WaitForSeconds(attackDelay);
-
-        // Наносим урон игроку
-        if (playerHP != null && playerHP.Currenthp > 0)
+        if (playerHP != null && playerHP.currentHp > 0)
         {
             playerHP.TakeDamage(damageToPlayer);
-            Debug.Log($"[Enemy] Ответный удар по игроку: {damageToPlayer}");
+            Debug.Log($"[Enemy] Ответный удар: {damageToPlayer}, HP игрока: {playerHP.currentHp}");
         }
-        // КД перед следующим ответом
-        yield return new WaitForSeconds(attackCooldown);
-        canCounterAttack = true;
+        isbool = false;
     }
 }

@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SpawnerEnemy : MonoBehaviour
@@ -7,9 +8,10 @@ public class SpawnerEnemy : MonoBehaviour
     public float spawnRadius = 3f;  // Радиус спавна вокруг префаба
     public float spawnInterval = 2f; // Интервал между спавнами
     public int maxEnemies = 3;      // Максимум врагов
+    public HpEnemy hpEnemy;
 
     private float timer;
-    public int currentEnemyCount;
+    private int currentEnemyCount = 0;
 
     void Update()
     {
@@ -19,6 +21,8 @@ public class SpawnerEnemy : MonoBehaviour
             SpawnEnemy();
             timer = spawnInterval;
         }
+        if (hpEnemy.currentHealth <= 0)
+            EnemyDied();
     }
 
     void SpawnEnemy()

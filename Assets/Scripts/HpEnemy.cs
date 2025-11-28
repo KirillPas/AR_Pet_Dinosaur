@@ -1,11 +1,11 @@
 using UnityEngine;
 using System.Collections;
+using Unity.VisualScripting;
 public class HpEnemy : MonoBehaviour
 {
     [Header("Настройки здоровья")]
-    public int maxHealth = 30;
-    public int currentHealth;
-    public SpawnerEnemy count;
+    public int maxHealth = 100;
+    public int currentHealth = 100;
 
     [Header("Эффекты")]
     public GameObject deathEffect;
@@ -18,9 +18,9 @@ public class HpEnemy : MonoBehaviour
     }
     public void TakeDamage(int damage)
     {
-        currentHealth -= damage;
+        if(currentHealth > 0)
+            currentHealth -= damage;
 
-        // Проверяем смерть противника
         if (currentHealth <= 0)
         {
             Die();
@@ -40,9 +40,7 @@ public class HpEnemy : MonoBehaviour
             AudioSource.PlayClipAtPoint(deathSound, transform.position);
         }
         animator.SetTrigger("Death");
-        // Уничтожаем объект
         Destroy(gameObject, 7f);
-        count.EnemyDied();
 
         Debug.Log("Противник уничтожен!");
     }

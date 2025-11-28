@@ -4,14 +4,18 @@ using UnityEngine.UI;
 
 public class Indicator : MonoBehaviour
 {
-    public Slider healthSlider;
-    public TextMeshProUGUI Hp;
-    public HpPlayer x;
+    public TextMeshProUGUI texthp;
+    public Slider slider;
+    public HpPlayer hp;
     void Update()
     {
-        if (Hp != null)
-            Hp.text = ((float)x.Currenthp).ToString();
-        if (x != null)
-            healthSlider.value = ((float)x.Currenthp / x.Maxhp);
+        if (texthp != null)
+        {
+            texthp.text = ((float)hp.currentHp).ToString();
+        }
+        if (hp != null && slider != null)
+        {
+            slider.value = (float)hp.currentHp / hp.maxhp;
+        }
     }
 }
