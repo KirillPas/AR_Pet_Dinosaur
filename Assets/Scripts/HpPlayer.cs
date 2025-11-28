@@ -16,6 +16,10 @@ public class HpPlayer : MonoBehaviour
         get { return currentHp; }
         set { currentHp = value; }
     }
+    private void Start()
+    {
+        currentHp = maxhp;
+    }
     public void TakeDamage(int damage)
     {
         currentHp -= damage;

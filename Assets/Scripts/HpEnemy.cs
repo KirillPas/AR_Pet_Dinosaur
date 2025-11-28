@@ -5,6 +5,7 @@ public class HpEnemy : MonoBehaviour
     [Header("Настройки здоровья")]
     public int maxHealth = 30;
     public int currentHealth;
+    public SpawnerEnemy count;
 
     [Header("Эффекты")]
     public GameObject deathEffect;
@@ -38,9 +39,10 @@ public class HpEnemy : MonoBehaviour
         {
             AudioSource.PlayClipAtPoint(deathSound, transform.position);
         }
-        animator.SetBool("Death", true);
+        animator.SetTrigger("Death");
         // Уничтожаем объект
         Destroy(gameObject, 7f);
+        count.EnemyDied();
 
         Debug.Log("Противник уничтожен!");
     }

@@ -324,7 +324,7 @@ GameObject:
   - component: {fileID: 2974137355408041101}
   - component: {fileID: 4385681327017915670}
   - component: {fileID: 2430597379692350278}
-  - component: {fileID: 4209839648715943748}
+  - component: {fileID: 4643403019847691882}
   m_Layer: 7
   m_Name: Canvas
   m_TagString: Untagged
@@ -434,7 +434,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RaycastTriggerInteraction: 1
---- !u!114 &4209839648715943748
+--- !u!114 &4643403019847691882
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -443,12 +443,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1250137412257442353}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b03137e1bb639a43ae69ef186b35f37, type: 3}
+  m_Script: {fileID: 11500000, guid: aa2c7b657c788444dab98b064a92d552, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Indicator
-  healthSlider: {fileID: 0}
+  m_EditorClassIdentifier: Assembly-CSharp::IndicatorEnemy
   Hp: {fileID: 7946412009056122283}
-  x: {fileID: -2147631956796914632}
+  hpEnemy: {fileID: -2147631956796914632}
 --- !u!1 &1280084945861562903
 GameObject:
   m_ObjectHideFlags: 0
@@ -2726,6 +2725,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HpEnemy
   maxHealth: 100
   currentHealth: 0
+  count: {fileID: 1943300205089223821, guid: 2be89e14c69aae7439b810044bfb64c5, type: 3}
   deathEffect: {fileID: 0}
   deathSound: {fileID: 0}
   animator: {fileID: 1195281827116082405}
