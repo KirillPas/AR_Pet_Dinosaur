@@ -10,6 +10,13 @@ public class HpPlayer : MonoBehaviour
     {
         currentHp = maxhp;
     }
+    public void Heal(int amount)
+    {
+        currentHp += amount;
+        if (currentHp > maxhp)
+            currentHp = maxhp;
+        Debug.Log("[HpPlayer] Heal: +" + amount + ", HP = " + currentHp);
+    }
     public void TakeDamage(int damage)
     {
         Debug.Log("[HpPlayer] TakeDamage. До урона: " + currentHp + ", урон: " + damage);
@@ -27,7 +34,6 @@ public class HpPlayer : MonoBehaviour
             Debug.Log("[HpPlayer] После урона: " + currentHp);
         }
     }
-
     public void Death()
     {
         DeathCanvas.previousSceneName = SceneManager.GetActiveScene().name;
