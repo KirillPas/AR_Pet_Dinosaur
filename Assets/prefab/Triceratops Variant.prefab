@@ -327,8 +327,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5931299599093835068}
   m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: -0.85}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalPosition: {x: 0, y: 0, z: 0.09}
+  m_LocalScale: {x: 20, y: 20, z: 20}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7913561521471850514}
@@ -337,7 +337,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.08, y: 11.58}
+  m_AnchoredPosition: {x: -0.08, y: 13.86}
   m_SizeDelta: {x: 0.6, y: 0.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &5625324616340613204
@@ -1022,9 +1022,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SpawnerEnemy
   Prefab: {fileID: 8396664866884345318, guid: 2eab5a9fce204084d9ce2fbb8b4b5492, type: 3}
   spawnCenter: {fileID: 325342657426360925}
-  spawnRadius: 3
+  spawnRadius: 2
   spawnInterval: 2
-  maxColl: 3
+  maxColl: 4
   maxForWins: 12
 --- !u!114 &4488540414937986521
 MonoBehaviour:
@@ -1108,7 +1108,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SpawnerEnemy
   Prefab: {fileID: 8713675838990471131, guid: 31167bd4cd9a2ef4b874aaeec94fdad3, type: 3}
   spawnCenter: {fileID: 325342657426360925}
-  spawnRadius: 3
+  spawnRadius: 2
   spawnInterval: 20
   maxColl: 1
   maxForWins: 4
@@ -1126,7 +1126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SpawnerEnemy
   Prefab: {fileID: 7173794278764974300, guid: 34717eac45deb3345ac49d24766184fb, type: 3}
   spawnCenter: {fileID: 325342657426360925}
-  spawnRadius: 3
+  spawnRadius: 1.5
   spawnInterval: 10
   maxColl: 3
   maxForWins: 12
