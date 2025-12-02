@@ -16,12 +16,16 @@ public class WatcherBehavior : MonoBehaviour
         var currentPosition = transform.position;
         if (Vector3.Distance(trackingPosition, currentPosition) < 0.1f)
         {
-            animator.SetBool("Speed", false);
+            if (animator != null)
+                animator.SetBool("Speed", false);
             return;
         }
         var lookRotation = Quaternion.LookRotation(trackingPosition - currentPosition);
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 10f);
         transform.position = Vector3.MoveTowards(currentPosition, trackingPosition, _speed * Time.deltaTime);
-        animator.SetBool("Speed", true);
+        if (animator != null)
+        {
+            animator.SetBool("Speed", true);
+        }
     }
 }

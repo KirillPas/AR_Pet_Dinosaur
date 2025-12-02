@@ -3,7 +3,7 @@ using UnityEngine;
 public class Medkit : MonoBehaviour
 {
     [SerializeField] public HpPlayer HpPlayer;
-    [SerializeField] private int _heal = 25;
+    [SerializeField] public int _heal = 25;
     [SerializeField] private string playerTag = "Player";
     private bool playerInRange = false;
 
@@ -36,7 +36,7 @@ public class Medkit : MonoBehaviour
         if (!playerInRange || HpPlayer == null)
             return;
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && HpPlayer.currentHp < HpPlayer.maxhp)
         {
             UseMedkit();
         }

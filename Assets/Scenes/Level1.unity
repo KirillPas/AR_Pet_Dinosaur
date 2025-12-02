@@ -409,7 +409,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WatcherSpawner
   aimBehaviour: {fileID: 123665523}
-  watcherPrefab: {fileID: 2885677972463529672, guid: 2be89e14c69aae7439b810044bfb64c5, type: 3}
+  watcherPrefab: {fileID: 325342657426137823, guid: bf183b84385f6084490008265a3dd2f8, type: 3}
   speed: 0.8
 --- !u!4 &1213074781
 Transform:
