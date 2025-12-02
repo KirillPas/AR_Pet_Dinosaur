@@ -8,7 +8,6 @@ public class HpEnemy : MonoBehaviour
     public int currentHealth = 100;
 
     [Header("Ёффекты")]
-    public GameObject deathEffect;
     public AudioClip deathSound;
     [SerializeField] Animator animator;
 
@@ -28,13 +27,6 @@ public class HpEnemy : MonoBehaviour
     }
     void Die()
     {
-        // Ёффект смерти
-        if (deathEffect != null)
-        {
-            Instantiate(deathEffect, transform.position, Quaternion.identity);
-        }
-
-        // «вук смерти
         if (deathSound != null)
         {
             AudioSource.PlayClipAtPoint(deathSound, transform.position);

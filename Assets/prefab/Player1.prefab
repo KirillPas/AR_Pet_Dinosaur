@@ -2346,12 +2346,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deab61e291ea89542ae90c3546ce5c91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnerEnemy
-  enemyPrefab: {fileID: 8396664866884345318, guid: 2eab5a9fce204084d9ce2fbb8b4b5492, type: 3}
+  Prefab: {fileID: 8396664866884345318, guid: 2eab5a9fce204084d9ce2fbb8b4b5492, type: 3}
   spawnCenter: {fileID: 2885677972463763702}
   spawnRadius: 2
   spawnInterval: 2
-  maxEnemies: 4
-  hpEnemy: {fileID: -2147631956796914632, guid: 2eab5a9fce204084d9ce2fbb8b4b5492, type: 3}
+  maxColl: 3
+  maxForWins: 12
 --- !u!114 &6180901328253853935
 MonoBehaviour:
   m_ObjectHideFlags: 0

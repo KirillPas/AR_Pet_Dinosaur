@@ -2725,7 +2725,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HpEnemy
   maxHealth: 100
   currentHealth: 100
-  deathEffect: {fileID: 0}
   deathSound: {fileID: 0}
   animator: {fileID: 1195281827116082405}
 --- !u!54 &-3831878128008375230
@@ -2768,7 +2767,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAttack
   damageToPlayer: 15
-  counterDelay: 0.3
+  counterDelay: 3.5
   playerHP: {fileID: 0}
   enemyHp: {fileID: -2147631956796914632}
   enemyAnimator: {fileID: 1195281827116082405}

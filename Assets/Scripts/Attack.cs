@@ -4,11 +4,11 @@ using System.Collections;
 public class Attack : MonoBehaviour
 {
     [Header("Настройки атаки")]
-    public float attackRange = 2f;          // Радиус атаки
-    public float attackCooldown = 1f;       // КД
-    public int attackDamage = 10;           // Урон
-    public LayerMask enemyLayer;            // Слой врагов
-    public PlayerAnimator playerAnimator;   // Скрипт анимации
+    public float attackRange = 2f;
+    public float attackCooldown = 1f;
+    public int attackDamage = 10;
+    public LayerMask enemyLayer;
+    public PlayerAnimator playerAnimator;
 
     private bool canAttack = true;
     private Camera arCamera;

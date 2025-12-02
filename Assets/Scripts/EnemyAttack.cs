@@ -32,6 +32,8 @@ public class EnemyAttack : MonoBehaviour
 
         if (isbool)
             return;
+        if (enemyAnimator != null)
+            enemyAnimator.SetTrigger("Attack");
 
         StartCoroutine(CounterAttackRoutine());
     }
@@ -46,9 +48,6 @@ public class EnemyAttack : MonoBehaviour
             isbool = false;
             yield break;
         }
-
-        if (enemyAnimator != null)
-            enemyAnimator.SetTrigger("Attack");
 
         if (playerHP != null && playerHP.currentHp > 0)
         {

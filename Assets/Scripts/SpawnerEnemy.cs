@@ -1,41 +1,47 @@
+using System.Collections;
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class SpawnerEnemy : MonoBehaviour
 {
-    public GameObject enemyPrefab;  // Префаб врага для спавна
-    public Transform spawnCenter;   // Трансформ, вокруг которого спавним врагов (ваш префаб)
-    public float spawnRadius = 3f;  // Радиус спавна вокруг префаба
-    public float spawnInterval = 2f; // Интервал между спавнами
-    public int maxEnemies = 3;      // Максимум врагов
-    public HpEnemy hpEnemy;
+    public GameObject Prefab;
+    public Transform spawnCenter;
+    public float spawnRadius = 3f;
+    public float spawnInterval = 2f;
+    public int maxColl = 3;
+    public int maxForWins = 12;
 
     private float timer;
-    private int currentEnemyCount = 0;
+    private List<GameObject> active = new List<GameObject>();
+    private int Count = 0;
+    private bool fCount = false;
 
+    void Start()
+    {
+        timer = spawnInterval;
+    }
     void Update()
     {
         timer -= Time.deltaTime;
-        if (timer <= 0f && currentEnemyCount < maxEnemies)
+        active.RemoveAll(enemy => enemy == null);
+        
+        if (timer <= 0f && active.Count < maxColl && fCount == false)
         {
             SpawnEnemy();
             timer = spawnInterval;
         }
-        if (hpEnemy.currentHealth <= 0)
-            EnemyDied();
     }
-
     void SpawnEnemy()
     {
         Vector2 circlePos = Random.insideUnitCircle * spawnRadius;
-        // Устанавливаем позицию врага вокруг префаба по X и Z с одинаковой высотой Y
         Vector3 spawnPos = new Vector3(spawnCenter.position.x + circlePos.x, spawnCenter.position.y, spawnCenter.position.z + circlePos.y);
-        Instantiate(enemyPrefab, spawnPos, Quaternion.identity);
-        currentEnemyCount++;
-    }
-
-    public void EnemyDied()
-    {
-        currentEnemyCount--;
+        GameObject newEnemy = Instantiate(Prefab, spawnPos, Quaternion.identity);
+        active.Add(newEnemy);
+        Count++;
+        if (Count >= maxForWins)
+        {
+            fCount = true;
+        }
     }
 }
