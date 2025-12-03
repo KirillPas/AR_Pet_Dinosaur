@@ -22,7 +22,7 @@ public class Scale : MonoBehaviour
 
         if (arCameraManager == null)
         {
-            Debug.LogError("❌ ARCameraManager не найден на " + gameObject.name);
+            Debug.LogError("ARCameraManager не найден на " + gameObject.name);
             enabled = false;
             return;
         }
@@ -30,7 +30,7 @@ public class Scale : MonoBehaviour
         arCameraManager.frameReceived += OnCameraFrameReceived;
         targetFOV = startFOV;
         aspect = cam.aspect;
-        Debug.Log($"✅ AR FOV Zoom: {startFOV} ({minFOV}-{maxFOV})");
+        Debug.Log($"AR FOV Zoom: {startFOV} ({minFOV}-{maxFOV})");
     }
     void OnDestroy()
     {

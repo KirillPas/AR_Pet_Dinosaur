@@ -1,5 +1,6 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using System.Collections;
+using UnityEngine;
+using static UnityEngine.Rendering.DebugUI;
 
 public class Attack : MonoBehaviour
 {
@@ -13,6 +14,16 @@ public class Attack : MonoBehaviour
     private bool canAttack = true;
     private Camera arCamera;
 
+    public void UpDamage(int value)
+    {
+        playerAnimator.EatHeal();
+        attackDamage += value;
+    }
+    public void UpCooldown(float value)
+    {
+        playerAnimator.EatHeal();
+        attackCooldown -= value;
+    }
     void Start()
     {
         arCamera = Camera.main;

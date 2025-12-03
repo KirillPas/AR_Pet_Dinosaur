@@ -1,10 +1,7 @@
-using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class SpawnerEnemy : MonoBehaviour
+public class Spawner : MonoBehaviour
 {
     public GameObject Prefab;
     public Transform spawnCenter;
@@ -26,19 +23,14 @@ public class SpawnerEnemy : MonoBehaviour
     {
         timer -= Time.deltaTime;
         active.RemoveAll(enemy => enemy == null);
-        
+
         if (timer <= 0f && active.Count < maxColl && fCount == false)
         {
-            SpawnEnemy();
+            Spawn();
             timer = spawnInterval;
         }
-        if (Count == maxForWins && active.Count == 0)
-        {
-            DeathCanvas.previousSceneName = SceneManager.GetActiveScene().name;
-            SceneManager.LoadScene("Win");
-        }
     }
-    void SpawnEnemy()
+    void Spawn()
     {
         Vector2 circlePos = Random.insideUnitCircle * spawnRadius;
         Vector3 spawnPos = new Vector3(spawnCenter.position.x + circlePos.x, spawnCenter.position.y, spawnCenter.position.z + circlePos.y);

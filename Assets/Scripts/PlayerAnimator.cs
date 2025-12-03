@@ -15,4 +15,11 @@ public class PlayerAnimator : MonoBehaviour
             animator.SetTrigger("Attack");
         }
     }
+    public void EatHeal()
+    {
+        if (animator != null)
+        {
+            animator.SetTrigger("Eat");
+        }
+    }
 }

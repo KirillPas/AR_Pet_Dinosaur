@@ -381,6 +381,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -700
       objectReference: {fileID: 0}
+    - target: {fileID: 5395988158481505968, guid: e8a9276bc4215d34ebb7b82527754e19, type: 3}
+      propertyPath: m_text
+      value: "\u0412\u044B \u043F\u043E\u0433\u0438\u0431\u043B\u0438 :("
+      objectReference: {fileID: 0}
     - target: {fileID: 7146225264163713776, guid: e8a9276bc4215d34ebb7b82527754e19, type: 3}
       propertyPath: m_Pivot.x
       value: 0

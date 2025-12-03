@@ -10,12 +10,19 @@ public class HpPlayer : MonoBehaviour
     {
         currentHp = maxhp;
     }
-    public void Heal(int amount)
+    public void Heal(int value)
     {
-        currentHp += amount;
+        animator.EatHeal();
+        currentHp += value;
         if (currentHp > maxhp)
             currentHp = maxhp;
-        Debug.Log("[HpPlayer] Heal: +" + amount + ", HP = " + currentHp);
+        Debug.Log("[HpPlayer] Heal: +" + value + ", HP = " + currentHp);
+    }
+    public void UpMaxHp(int value)
+    {
+        animator.EatHeal();
+        maxhp += value;
+        currentHp = maxhp;
     }
     public void TakeDamage(int damage)
     {
