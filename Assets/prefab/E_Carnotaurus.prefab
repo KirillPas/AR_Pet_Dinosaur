@@ -2443,9 +2443,9 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: a179e9ead77c2bf4fb0315130e44af92, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2725,7 +2725,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HpEnemy
   maxHealth: 100
   currentHealth: 100
-  deathSound: {fileID: 0}
+  deathSound: {fileID: 8300000, guid: a179e9ead77c2bf4fb0315130e44af92, type: 3}
+  death: {fileID: 1009575161294364764}
   animator: {fileID: 1195281827116082405}
 --- !u!54 &-3831878128008375230
 Rigidbody:

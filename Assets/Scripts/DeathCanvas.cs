@@ -23,8 +23,8 @@ public class DeathCanvas : MonoBehaviour
     }
     void OnRestartClicked()
     {
-        SceneManager.LoadScene(previousSceneName); 
         KillManager.Instance.RestartKill();
+        SceneManager.LoadScene(previousSceneName); 
     }
     void Stats()
     {

@@ -36,9 +36,9 @@ public class SpawnerEnemy : MonoBehaviour
         }
         if (Count == maxForWins && active.Count == 0)
         {
-            levelTimer.StopTimer();
-            float time = levelTimer.LevelTime;
-            KillManager.Instance.SaveLevelTime(time);
+            GameObject time = GameObject.FindGameObjectWithTag("Timerr");
+            levelTimer = time.GetComponent<LevelTimer>();
+            levelTimer.FinishWin();
             DeathCanvas.previousSceneName = SceneManager.GetActiveScene().name;
             SceneManager.LoadScene("Win");
         }

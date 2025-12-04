@@ -29,6 +29,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Statistics.unity
     guid: f2898a679af64404d9f6209824ec9a6f
+  - enabled: 1
+    path: Assets/Scenes/Viewing1.1.unity
+    guid: 12ab362f800a4c44382daaccb25fde9a
+  - enabled: 1
+    path: Assets/Scenes/Viewing1.2.unity
+    guid: 27dafbe05c2b96b47a705e3e6bb6e5bf
+  - enabled: 1
+    path: Assets/Scenes/Viewing1.3.unity
+    guid: c2fcb85686f820741bf382928bea6d9a
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: d5b980a685950124bb2bb7ff11ce3976, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}

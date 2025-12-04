@@ -309,6 +309,9 @@ MonoBehaviour:
   next1: {fileID: 1478627412}
   next2: {fileID: 629740438}
   next3: {fileID: 2143002248}
+  look1: {fileID: 1507592231}
+  look2: {fileID: 2127090916}
+  look3: {fileID: 1518890357}
   canvas: {fileID: 1092362545}
   canvas2: {fileID: 985212784}
   canvas3: {fileID: 1971611202}
@@ -478,7 +481,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::KillManager
   kills: 0
-  lastLevelTime: 0
+  lastWinTime: 0
+  lastLoseTime: 0
 --- !u!4 &214734848
 Transform:
   m_ObjectHideFlags: 0

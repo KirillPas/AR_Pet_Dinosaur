@@ -10,6 +10,7 @@ public class Dino : MonoBehaviour
     public Button next1;
     public Button next2;
     public Button next3;
+    public Button look1, look2, look3;
     public Canvas canvas;
     public Canvas canvas2;
     public Canvas canvas3;
@@ -30,6 +31,12 @@ public class Dino : MonoBehaviour
             next2.onClick.AddListener(NextDino2);
         if (next3 != null)
             next3.onClick.AddListener(NextDino3);
+        if (look1 != null)
+            look1.onClick.AddListener(Look1);
+        if (look2 != null)
+            look2.onClick.AddListener(Look2);
+        if (look3 != null)
+            look3.onClick.AddListener(Look3);
     }
     void StartGame()
     {
@@ -57,5 +64,17 @@ public class Dino : MonoBehaviour
     {
         canvas3.gameObject.SetActive(false);
         canvas.gameObject.SetActive(true);
+    }
+    void Look1()
+    {
+        SceneManager.LoadScene("Viewing1.1");
+    }
+    void Look2()
+    {
+        SceneManager.LoadScene("Viewing1.2");
+    }
+    void Look3()
+    {
+        SceneManager.LoadScene("Viewing1.3");
     }
 }

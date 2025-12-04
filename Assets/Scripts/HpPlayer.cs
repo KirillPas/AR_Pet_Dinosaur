@@ -44,9 +44,9 @@ public class HpPlayer : MonoBehaviour
     }
     public void Death()
     {
-        levelTimer.StopTimer();
-        float time = levelTimer.LevelTime;
-        KillManager.Instance.SaveLevelTime(time);
+        GameObject time = GameObject.FindGameObjectWithTag("Timerr");
+        levelTimer = time.GetComponent<LevelTimer>();
+        levelTimer.FinishLose();
         DeathCanvas.previousSceneName = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene("Restart");
         currentHp = maxhp;

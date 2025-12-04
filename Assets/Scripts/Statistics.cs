@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 
@@ -10,7 +11,10 @@ public class Statistics : MonoBehaviour
         if (KillManager.Instance != null)
         {
             countenemy.text = KillManager.Instance.kills.ToString();
-            timer.text = KillManager.Instance.lastLevelTime.ToString();
+            if (KillManager.Instance.lastWinTime > 0)
+                timer.text = (Math.Round(KillManager.Instance.lastWinTime)).ToString();
+            if (KillManager.Instance.lastLoseTime > 0)
+                timer.text = (Math.Round(KillManager.Instance.lastLoseTime)).ToString();
         }
     }
 }

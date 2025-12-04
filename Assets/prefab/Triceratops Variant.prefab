@@ -1136,7 +1136,7 @@ MonoBehaviour:
   spawnCenter: {fileID: 325342657426360925}
   spawnRadius: 1.5
   spawnInterval: 10
-  maxColl: 3
+  maxColl: 2
   maxForWins: 20
 --- !u!114 &5595537652288402219
 MonoBehaviour:

@@ -11,6 +11,7 @@ public class LevelTimer : MonoBehaviour
     {
         KillManager.Instance.RestartKill();
         startTime = Time.time;
+        isRunning = true;
     }
     void Update()
     {
@@ -19,5 +20,17 @@ public class LevelTimer : MonoBehaviour
     public void StopTimer()
     {
         isRunning = false;
+    }
+    public void FinishWin()
+    {
+        isRunning = false;
+        float t = Time.time - startTime;
+        KillManager.Instance.SaveWinTime(t);
+    }
+    public void FinishLose()
+    {
+        isRunning = false;
+        float t = Time.time - startTime;
+        KillManager.Instance.SaveLoseTime(t);
     }
 }

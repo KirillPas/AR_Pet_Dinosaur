@@ -4,7 +4,8 @@ public class KillManager : MonoBehaviour
 {
     public static KillManager Instance;
     public int kills;
-    public float lastLevelTime;
+    public float lastWinTime;
+    public float lastLoseTime;
 
     void Awake()
     {
@@ -22,13 +23,19 @@ public class KillManager : MonoBehaviour
     {
         kills++;
     }
-    public void SaveLevelTime(float time)
+    public void SaveWinTime(float time)
     {
-        lastLevelTime = time;
+        lastWinTime = time;
+    }
+
+    public void SaveLoseTime(float time)
+    {
+        lastLoseTime = time;
     }
     public void RestartKill()
     {
         kills = 0;
-        lastLevelTime = 0f;
+        lastWinTime = 0f;
+        lastLoseTime = 0f;
     }
 }

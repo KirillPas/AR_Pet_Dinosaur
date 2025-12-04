@@ -10,6 +10,7 @@ public class HpEnemy : MonoBehaviour
 
     [Header("Ёффекты")]
     public AudioClip deathSound;
+    public AudioSource death;
     [SerializeField] Animator animator;
 
     void Start()
@@ -32,7 +33,7 @@ public class HpEnemy : MonoBehaviour
     {
         if (deathSound != null)
         {
-            AudioSource.PlayClipAtPoint(deathSound, transform.position);
+            death.PlayOneShot(deathSound);
         }
         animator.SetTrigger("Death");
         Destroy(gameObject, 7f);
