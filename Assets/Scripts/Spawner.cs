@@ -26,6 +26,7 @@ public class Spawner : MonoBehaviour
 
         if (timer <= 0f && active.Count < maxColl && fCount == false)
         {
+            timer = spawnInterval;
             Spawn();
             timer = spawnInterval;
         }

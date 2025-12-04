@@ -7,6 +7,7 @@ public class HpEnemy : MonoBehaviour
     public int maxHealth = 100;
     public int currentHealth = 100;
 
+
     [Header("Ёффекты")]
     public AudioClip deathSound;
     [SerializeField] Animator animator;
@@ -22,6 +23,8 @@ public class HpEnemy : MonoBehaviour
 
         if (currentHealth <= 0)
         {
+            currentHealth = 0;
+            KillManager.Instance.AddKill();
             Die();
         }
     }

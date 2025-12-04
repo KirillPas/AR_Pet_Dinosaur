@@ -1032,6 +1032,7 @@ MonoBehaviour:
   spawnInterval: 2
   maxColl: 4
   maxForWins: 12
+  levelTimer: {fileID: 3374493308628226489, guid: 2f56f02771c276d4e9750cf638c27f2f, type: 3}
 --- !u!114 &4488540414937986521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1045,8 +1046,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HpPlayer
   animator: {fileID: 8027668254327641625}
-  maxhp: 120
-  currentHp: 120
+  maxhp: 130
+  currentHp: 130
+  levelTimer: {fileID: 3374493308628226489, guid: 2f56f02771c276d4e9750cf638c27f2f, type: 3}
 --- !u!114 &8027668254327641625
 MonoBehaviour:
   m_ObjectHideFlags: 0

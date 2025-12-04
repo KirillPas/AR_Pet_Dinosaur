@@ -80,11 +80,12 @@ public class Attack : MonoBehaviour
     {
         Debug.Log("[PlayerAttack] Попал по врагу: " + enemy.name);
 
-        if (playerAnimator != null)
+        HpEnemy enemyHealth = enemy.GetComponent<HpEnemy>();
+
+        if (playerAnimator != null && enemyHealth.currentHealth > 0)
         {
             playerAnimator.PlayAttackAnimation();
         }
-        HpEnemy enemyHealth = enemy.GetComponent<HpEnemy>();
         if (enemyHealth != null && enemyHealth.currentHealth > 0)
         {
             enemyHealth.TakeDamage(attackDamage);

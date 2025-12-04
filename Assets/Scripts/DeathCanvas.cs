@@ -7,6 +7,7 @@ public class DeathCanvas : MonoBehaviour
     public Canvas deathScreen;
     public Button restart;
     public Button menu;
+    public Button statistics;
     public static string previousSceneName;
 
     void Start()
@@ -14,6 +15,7 @@ public class DeathCanvas : MonoBehaviour
         deathScreen.gameObject.SetActive(true);
         menu.onClick.AddListener(OnMenuClicked);
         restart.onClick.AddListener(OnRestartClicked);
+        statistics.onClick.AddListener(Stats);
     }
     void OnMenuClicked()
     {
@@ -21,6 +23,12 @@ public class DeathCanvas : MonoBehaviour
     }
     void OnRestartClicked()
     {
-        SceneManager.LoadScene(previousSceneName);
+        SceneManager.LoadScene(previousSceneName); 
+        KillManager.Instance.RestartKill();
+    }
+    void Stats()
+    {
+        StatisticsCanvas.backWinOrRestart = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene("Statistics");
     }
 }

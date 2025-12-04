@@ -6,6 +6,7 @@ public class HpPlayer : MonoBehaviour
     [SerializeField] PlayerAnimator animator;
     public int maxhp = 100;
     public int currentHp = 100;
+    public LevelTimer levelTimer;
     void Start()
     {
         currentHp = maxhp;
@@ -43,6 +44,9 @@ public class HpPlayer : MonoBehaviour
     }
     public void Death()
     {
+        levelTimer.StopTimer();
+        float time = levelTimer.LevelTime;
+        KillManager.Instance.SaveLevelTime(time);
         DeathCanvas.previousSceneName = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene("Restart");
         currentHp = maxhp;

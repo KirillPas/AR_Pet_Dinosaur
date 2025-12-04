@@ -9,9 +9,10 @@ public class SpawnerEnemy : MonoBehaviour
     public GameObject Prefab;
     public Transform spawnCenter;
     public float spawnRadius = 3f;
-    public float spawnInterval = 2f;
+    public float spawnInterval = 3f;
     public int maxColl = 3;
     public int maxForWins = 12;
+    public LevelTimer levelTimer;
 
     private float timer;
     private List<GameObject> active = new List<GameObject>();
@@ -29,11 +30,15 @@ public class SpawnerEnemy : MonoBehaviour
         
         if (timer <= 0f && active.Count < maxColl && fCount == false)
         {
+            timer = spawnInterval;
             SpawnEnemy();
             timer = spawnInterval;
         }
         if (Count == maxForWins && active.Count == 0)
         {
+            levelTimer.StopTimer();
+            float time = levelTimer.LevelTime;
+            KillManager.Instance.SaveLevelTime(time);
             DeathCanvas.previousSceneName = SceneManager.GetActiveScene().name;
             SceneManager.LoadScene("Win");
         }

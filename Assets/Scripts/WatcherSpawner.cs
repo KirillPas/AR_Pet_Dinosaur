@@ -7,6 +7,10 @@ public class WatcherSpawner : MonoBehaviour
     [SerializeField] private float speed = 1.2f;
     private WatcherBehavior _watcherBehavior;
 
+    void Start()
+    {
+        KillManager.Instance.RestartKill();
+    }
     private void Update()
     {
         if (_watcherBehavior == null && aimBehaviour.currentPlane != null)

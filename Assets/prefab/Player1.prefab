@@ -2355,6 +2355,7 @@ MonoBehaviour:
   spawnInterval: 2
   maxColl: 4
   maxForWins: 12
+  levelTimer: {fileID: 3374493308628226489, guid: 2f56f02771c276d4e9750cf638c27f2f, type: 3}
 --- !u!114 &6180901328253853935
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2463,6 +2464,7 @@ MonoBehaviour:
   animator: {fileID: 2492552390524756707}
   maxhp: 100
   currentHp: 100
+  levelTimer: {fileID: 3374493308628226489, guid: 2f56f02771c276d4e9750cf638c27f2f, type: 3}
 --- !u!114 &-3941712844004781120
 MonoBehaviour:
   m_ObjectHideFlags: 0
