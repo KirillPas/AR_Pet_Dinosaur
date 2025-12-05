@@ -32,8 +32,6 @@ public class EnemyAttack : MonoBehaviour
 
         if (isbool)
             return;
-        if (enemyAnimator != null)
-            enemyAnimator.SetTrigger("Attack");
 
         StartCoroutine(CounterAttackRoutine());
     }
@@ -42,7 +40,8 @@ public class EnemyAttack : MonoBehaviour
         isbool = true;
 
         yield return new WaitForSeconds(counterDelay);
-
+        if (enemyAnimator != null)
+            enemyAnimator.SetTrigger("Attack");
         if (enemyHp == null || enemyHp.currentHealth <= 0)
         {
             isbool = false;

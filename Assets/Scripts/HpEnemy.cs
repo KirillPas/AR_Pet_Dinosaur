@@ -31,7 +31,7 @@ public class HpEnemy : MonoBehaviour
     }
     void Die()
     {
-        if (deathSound != null)
+        if (deathSound != null && death != null)
         {
             death.PlayOneShot(deathSound);
         }

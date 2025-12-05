@@ -2276,7 +2276,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 7.017213, y: -0.0000009536743, z: -3.073309}
-  m_LocalScale: {x: 0.02, y: 0.02, z: 0.02}
+  m_LocalScale: {x: 0.029999997, y: 0.029999997, z: 0.029999997}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6020848018557002132}
@@ -2768,7 +2768,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAttack
   damageToPlayer: 15
-  counterDelay: 3.5
+  counterDelay: 2.5
   playerHP: {fileID: 0}
   enemyHp: {fileID: -2147631956796914632}
   enemyAnimator: {fileID: 1195281827116082405}
