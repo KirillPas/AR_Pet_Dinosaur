@@ -9,6 +9,7 @@ public class Pause : MonoBehaviour
     [SerializeField] private Button Play;
     void Start()
     {
+        Time.timeScale = 1f;
         if (Exit != null && Play != null && ButtonPlay != null)
         {
             Play.gameObject.SetActive(false);
@@ -35,6 +36,7 @@ public class Pause : MonoBehaviour
         Play.gameObject.SetActive(true);
         Exit.gameObject.SetActive(true);
         ButtonPlay.gameObject.SetActive(true);
+        ButtonPause.gameObject.SetActive(false);
     }
     void InPlay()
     {
@@ -42,5 +44,6 @@ public class Pause : MonoBehaviour
         Play.gameObject.SetActive(false);
         Exit.gameObject.SetActive(false);
         ButtonPlay.gameObject.SetActive(false);
+        ButtonPause.gameObject.SetActive(true);
     }
 }

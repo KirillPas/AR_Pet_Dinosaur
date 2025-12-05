@@ -1046,8 +1046,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HpPlayer
   animator: {fileID: 8027668254327641625}
-  maxhp: 130
-  currentHp: 130
+  maxhp: 150
+  currentHp: 150
   levelTimer: {fileID: 3374493308628226489, guid: 2f56f02771c276d4e9750cf638c27f2f, type: 3}
 --- !u!114 &8027668254327641625
 MonoBehaviour:

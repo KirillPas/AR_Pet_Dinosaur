@@ -7,7 +7,6 @@ public class PlayerAnimator : MonoBehaviour
     {
         animator = GetComponent<Animator>();
     }
-
     public void PlayAttackAnimation()
     {
         if (animator != null)
@@ -20,6 +19,20 @@ public class PlayerAnimator : MonoBehaviour
         if (animator != null)
         {
             animator.SetTrigger("Eat");
+        }
+    }
+    public void Dance()
+    {
+        if (animator != null) 
+        {
+            animator.SetTrigger("Dance");
+        }
+    }
+    public void Action()
+    {
+        if (animator != null)
+        {
+            animator.SetTrigger("Action");
         }
     }
 }
