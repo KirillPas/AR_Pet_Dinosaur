@@ -484,6 +484,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BackChoice
   back: {fileID: 585851610}
+  backscene: Choice
 --- !u!1 &585851608
 GameObject:
   m_ObjectHideFlags: 0

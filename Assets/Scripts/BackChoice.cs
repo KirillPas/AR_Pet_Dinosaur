@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class BackChoice : MonoBehaviour
 {
     [SerializeField] private Button back;
+    [SerializeField] private string backscene;
     void Start()
     {
         if (back != null)
@@ -12,6 +13,6 @@ public class BackChoice : MonoBehaviour
     }
     void Back()
     {
-        SceneManager.LoadScene("Choice");
+        SceneManager.LoadScene(backscene);
     }
 }
