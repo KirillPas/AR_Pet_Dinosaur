@@ -2251,6 +2251,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChangeLevel
   level1: {fileID: 1407336917}
+  level2: {fileID: 1628939979}
+  level3: {fileID: 1180957041}
   CanvasLevel: {fileID: 1558065739}
 --- !u!1 &1942714087
 GameObject:

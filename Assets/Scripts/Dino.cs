@@ -4,17 +4,11 @@ using UnityEngine.UI;
 
 public class Dino : MonoBehaviour
 {
-    public Button dino;
-    public Button dino2;
-    public Button dino3;
-    public Button next1;
-    public Button next2;
-    public Button next3;
+    public Button dino, dino2, dino3;
+    public Button next1, next2, next3;
     public Button look1, look2, look3;
-    public Canvas canvas;
-    public Canvas canvas2;
-    public Canvas canvas3;
-
+    public Canvas canvas, canvas2, canvas3;
+    public static int number;
 
     void Start()
     {
@@ -40,15 +34,30 @@ public class Dino : MonoBehaviour
     }
     void StartGame()
     {
-        SceneManager.LoadScene("Level1");
+        if (number == 1)
+            SceneManager.LoadScene("Level1");
+        if (number == 2)
+            SceneManager.LoadScene("Level2.1");
+        if (number == 3)
+            SceneManager.LoadScene("Level3.1");
     }
     void StartGame2()
     {
-        SceneManager.LoadScene("Level1.2");
+        if (number == 1)
+            SceneManager.LoadScene("Level1.2");
+        if (number == 2)
+            SceneManager.LoadScene("Level2.2");
+        if (number == 3)
+            SceneManager.LoadScene("Level3.2");
     }
     void StartGame3()
     {
-        SceneManager.LoadScene("Level1.3");
+        if (number == 1)
+            SceneManager.LoadScene("Level1.3");
+        if (number == 2)
+            SceneManager.LoadScene("Level2.3");
+        if (number == 3)
+            SceneManager.LoadScene("Level3.3");
     }
     void NextDino()
     {

@@ -1176,7 +1176,7 @@ MonoBehaviour:
   spawnRadius: 1.5
   spawnInterval: 15
   maxColl: 2
-  maxForWins: 15
+  maxForWins: 16
 --- !u!114 &7305104897553278137
 MonoBehaviour:
   m_ObjectHideFlags: 0

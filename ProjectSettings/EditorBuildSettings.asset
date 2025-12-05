@@ -38,6 +38,24 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Viewing1.3.unity
     guid: c2fcb85686f820741bf382928bea6d9a
+  - enabled: 1
+    path: Assets/Scenes/Level2.1.unity
+    guid: bc422a9c73725b24ab11a86246cbd2bf
+  - enabled: 1
+    path: Assets/Scenes/Level2.2.unity
+    guid: 5da03603344a2e847b81668376d88bda
+  - enabled: 1
+    path: Assets/Scenes/Level2.3.unity
+    guid: e280a87c1e161d64c9b4a601315f58b1
+  - enabled: 1
+    path: Assets/Scenes/Level3.1.unity
+    guid: ca55b1d712286f149a6c1cb9a08ffb7f
+  - enabled: 1
+    path: Assets/Scenes/Level3.2.unity
+    guid: 19ee72a759fc11d47a0b783b18d9a2af
+  - enabled: 1
+    path: Assets/Scenes/Level3.3.unity
+    guid: c5c7625e8ab11164c9f1f38fb4fd5019
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: d5b980a685950124bb2bb7ff11ce3976, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
